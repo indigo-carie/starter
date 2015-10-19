@@ -1,0 +1,26 @@
+/* Globals
+*************************************************/
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html, 
+body { 
+  height: 100%; 
+  font: 17px/1.4 'Segoe UI', 'Segoe', Verdana, Arial, sans-serif;
+}
+
+body {
+  // background: #fff;
+}
+
+.wrapper {                        // Wrapper around all block content
+	@include outer-container;
+  section {
+		@include span-columns(8);
+    @include shift(2);
+	}
+}
+
