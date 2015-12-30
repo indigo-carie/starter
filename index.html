@@ -22,40 +22,137 @@
   <![endif]-->
 
     <div class="wrapper">
-      <section>
-        <a href="#"></a>
+      <section id="intro">
+        <a class="button button--ghost" href="#">
+          <span>START SURVEY</span>
+        </a>
       </section>
       
-      <section>
-        <form id="survey" action="#" method="POST">
+      <section id="form">
+        <form id="survey" action="#complete" onsubmit="return CreateRecordType()">
           <div id="fieldsets">
-            <a class="btn" id="back">Back</a>
-            <a class="btn" id="next">Next</a>
+            <div class="button--group">
+              <a class="button left" id="back">Back</a>
+              <div class="questionNumber"><span>1</span> of 5</div>
+              <a class="button right" id="next">Skip</a>
+            </div>
 
-            <fieldset class="current">
+            <fieldset id="Q1" class="current">
+              <div class="image">
+              </div>
+
+              <div class="question">
+                <div class="text">
+                  Which Inflight mobile website design do you prefer?
+                </div>
+                <label for="Q1--A">
+                  <input type="radio" name="Q1" id="Q1--A" value="Q1--A"> <span>I prefer design 1</span>
+                </label>
+                <label for="Q1--B">
+                  <input type="radio" name="Q1" id="Q1--B" value="Q1--B"> <span>I prefer design 2</span>
+                </label>
+                <label for="Q1--C">
+                  <input type="radio" name="Q1" id="Q1--C" value="Q1--C"> <span>I love them both!</span>
+                </label>
+              </div>
 
             </fieldset>
 
-            <fieldset class="next">
-
+            <fieldset id="Q2" class="next">
+              <div class="image">
+              </div>
+              
+              <div class="question">
+                <div class="text">
+                  Which menu item would you click to find vacation bidding information?
+                </div>
+                <label for="Q2--A">
+                  <input type="radio" name="Q2" id="Q2--A" value="Q2--A"> <span>My schedule</span>
+                </label>
+                <label for="Q2--B">
+                  <input type="radio" name="Q2" id="Q2--B" value="Q2--B"> <span>Training</span>
+                </label>
+                <label for="Q2--C">
+                  <input type="radio" name="Q2" id="Q2--C" value="Q2--C"> <span>Hotel</span>
+                </label>
+                <label for="Q2--D">
+                  <input type="radio" name="Q2" id="Q2--D" value="Q2--D"> <span>Administration</span>
+                </label>
+              </div>
             </fieldset>
-            
-            <input class="btn" type="submit">
-            
-            <ul id="pagination">
-              <li class="current active"><span></span></li>
-              <li><span></span></li>
-            </ul>
+
+            <fieldset id="Q3" class="next">
+              <div class="image">
+              </div>
+              
+              <div class="question">
+                <div class="text">
+                  Which menu item would you click to find our latest uniform standards?
+                </div>
+                <label for="Q3--A">
+                  <input type="radio" name="Q3" id="Q3--A" value="Q3--A"> <span>Safety</span>
+                </label>
+                <label for="Q3--B">
+                  <input type="radio" name="Q3" id="Q3--B" value="Q3--B"> <span>My schedule</span>
+                </label>
+                <label for="Q3--C">
+                  <input type="radio" name="Q3" id="Q3--C" value="Q3--C"> <span>Training</span>
+                </label>
+                <label for="Q3--D">
+                  <input type="radio" name="Q3" id="Q3--D" value="Q3--D"> <span>Administration</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset id="Q4" class="next">
+              <div class="image">
+              </div>
+              
+              <div class="question">
+                <div class="text">
+                  How likely are you to use the Inflight website on your IMD if it had one of these new designs?
+                </div>
+                <label for="Q4--A">
+                  <input type="radio" name="Q4" id="Q4--A" value="Q4--A"> <span>Extremely likely</span>
+                </label>
+                <label for="Q4--B">
+                  <input type="radio" name="Q4" id="Q4--B" value="Q4--B"> <span>My Very likely</span>
+                </label>
+                <label for="Q4--C">
+                  <input type="radio" name="Q4" id="Q4--C" value="Q4--C"> <span>Moderately likely</span>
+                </label>
+                <label for="Q4--D">
+                  <input type="radio" name="Q4" id="Q4--D" value="Q4--D"> <span>Slightly likely</span>
+                </label>
+                <label for="Q4--E">
+                  <input type="radio" name="Q4" id="Q4--E" value="Q4--E"> <span>Not at all likely</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset id="Q5" class="next">
+              <div class="question">
+                <div class="text">
+                  Do you have any other feedback on these new mobile-friendly website designs?
+                </div>
+                <textarea placeholder="Your answer here..."></textarea>
+
+              <input type="submit" class="button" value="Submit & Finish">
+            </fieldset>
             
           </div>
         </form>
+      </section>
+
+      <section id="complete">
+        <h1>Thank you!</h1>
+        <p>Your survey has been submitted.</p>
       </section>
       
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
-    <script src="js/vendor/jquery.validate.min.js"></script>
     <script src="js/main.js"></script>
 
   </body>

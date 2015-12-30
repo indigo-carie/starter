@@ -1,0 +1,40 @@
+.button {
+  display: block; 
+  cursor: pointer; 
+  border: none; 
+  outline: none; 
+
+  &.disabled {
+    pointer-events: none; 
+  }
+
+  &--group {
+    width: 100%; 
+    padding: 25px 150px; 
+    background-color: $color--border; 
+    @include display(flex);
+    @include justify-content(space-between);
+
+    .button {
+      text-transform: uppercase; 
+    }
+
+  }
+}
+
+.lt-ie9 {
+  .button {
+    &--group {
+      .button {
+
+        &.left {
+          float: left; 
+        }
+
+        &.right {
+          float: right; 
+        }
+      }
+    }
+  }
+}
