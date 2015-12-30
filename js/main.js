@@ -1,15 +1,3 @@
-function CreateRecordType() {
-  var obj = $('#survey').serialize();
-  $.ajax({
-      type: "POST",
-      data: JSON.stringify(obj),
-      url: "http://indigostuff.azurewebsites.net/api/recordtypes",
-      contentType: "application/json",
-      success: function () { alert("success"); },
-      error: function(jqXHR, textStatus, errorThrown) { alert(textStatus + ": " + errorThrown); }
-  });
-  return false; 
-}
 
 //http://webdesign.tutsplus.com/articles/build-a-multi-step-form-interface--webdesign-11715
 
