@@ -2,13 +2,9 @@
 @import "vendor/bourbon/bourbon";        // SASS Library
 @import "vendor/neat/neat";              // SASS Grid Library
 
-@import "partials/__variables";
-@import "partials/__reset";          // Boilerplate globals
-@import "partials/__mixins";         // SASS Mixins
+@import "partials/__reset";               // Boilerplate globals
+@import "partials/__variables";           // Project Variables
 @import "partials/__fonts-segoe";         // Fonts: Segoe UI
 
 // Globals
 @import "partials/__globals";             // Sitewide Globals.
-
-// Individual Pages
-@import "partials/__navigation";          // Header
