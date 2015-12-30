@@ -8,11 +8,8 @@ function CreateRecordType() {
       success: function () { alert("success"); },
       error: function(jqXHR, textStatus, errorThrown) { alert(textStatus + ": " + errorThrown); }
   });
-
   return false; 
-
-};
-
+}
 
 //http://webdesign.tutsplus.com/articles/build-a-multi-step-form-interface--webdesign-11715
 
@@ -39,24 +36,18 @@ $("#back").on("click", function(e){
 });
 
 $("#next").on("click", function(e){
-  //if ($("#next").is(":visible") && $("fieldset.current").find("input, textarea").valid() ){
-    if ($("fieldset.current").index() != numQuestions){
-      e.preventDefault();
-      nextSection();
-      return false;
-    } 
+  if ($("fieldset.current").index() != numQuestions){
+    e.preventDefault();
+    nextSection();
+    return false;
+  }
 });
 
 $("input[type=radio]").on("click", function(e){
   nextSection();
+  return false;
 });
 
-$("form").on("submit", function(e){
-  if ($("#next").is(":visible") || $("fieldset.current").index() < numQuestions || !$("fieldset.current").find("input, textarea").valid()){
-    e.preventDefault();
-    return false;
-  }
-});
   
 function prevSection(){
   var i = $("fieldset.current").index();
@@ -80,11 +71,9 @@ function goToSection(i){
   setTimeout(function(){
     $("fieldset").eq(i).removeClass("next").addClass("current active");
       if ($("fieldset.current").index() == numQuestions){
-        $("#next").html('SKIP & FINISH');
-        $("input[type=submit]").show();
+        $("#next").html('Skip & Finish').addClass('submit');
       } else {
-        $("#next").html('SKIP');
-        $("input[type=submit]").hide();
+        $("#next").html('Skip').removeClass('submit');
       }
   }, 80);
 
